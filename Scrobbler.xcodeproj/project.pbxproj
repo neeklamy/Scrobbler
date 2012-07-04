@@ -10,8 +10,6 @@
 		5C297DC2146374E60050C8DE /* SYUIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C297DBD146374E60050C8DE /* SYUIController.m */; };
 		5C297DC3146374E60050C8DE /* SYLCDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C297DBF146374E60050C8DE /* SYLCDView.m */; };
 		5C297DC4146374E60050C8DE /* SYWhiteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C297DC1146374E60050C8DE /* SYWhiteView.m */; };
-		5C297DCA146374F70050C8DE /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C297DC7146374F70050C8DE /* EMKeychainItem.m */; };
-		5C297DCB146374F70050C8DE /* EMKeychainProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C297DC9146374F70050C8DE /* EMKeychainProxy.m */; };
 		5C297DD3146375410050C8DE /* MPFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C297DCD146375410050C8DE /* MPFunctions.m */; };
 		5C297DD4146375410050C8DE /* NSCollections+MPTidbits.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C297DD0146375410050C8DE /* NSCollections+MPTidbits.m */; };
 		5C297DD5146375410050C8DE /* NSString+MPTidbits.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C297DD2146375410050C8DE /* NSString+MPTidbits.m */; };
@@ -32,6 +30,7 @@
 		5C5F63A1145B056E0004D651 /* Scribbler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5F63A0145B056E0004D651 /* Scribbler.framework */; };
 		5C5F63A3145B05830004D651 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5F63A2145B05830004D651 /* Carbon.framework */; };
 		5C5F63A5145B05910004D651 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5F63A4145B05910004D651 /* Security.framework */; };
+		83F55CF815A4F6D600D9DF41 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F55CF715A4F6D600D9DF41 /* EMKeychainItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,10 +53,6 @@
 		5C297DBF146374E60050C8DE /* SYLCDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYLCDView.m; sourceTree = "<group>"; };
 		5C297DC0146374E60050C8DE /* SYWhiteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYWhiteView.h; sourceTree = "<group>"; };
 		5C297DC1146374E60050C8DE /* SYWhiteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYWhiteView.m; sourceTree = "<group>"; };
-		5C297DC6146374F70050C8DE /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
-		5C297DC7146374F70050C8DE /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
-		5C297DC8146374F70050C8DE /* EMKeychainProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainProxy.h; sourceTree = "<group>"; };
-		5C297DC9146374F70050C8DE /* EMKeychainProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainProxy.m; sourceTree = "<group>"; };
 		5C297DCC146375410050C8DE /* MPFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFunctions.h; sourceTree = "<group>"; };
 		5C297DCD146375410050C8DE /* MPFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFunctions.m; sourceTree = "<group>"; };
 		5C297DCE146375410050C8DE /* MPTidbits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTidbits.h; sourceTree = "<group>"; };
@@ -89,6 +84,8 @@
 		5C5F63A2145B05830004D651 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		5C5F63A4145B05910004D651 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5C5F63A6145B05A40004D651 /* Scribbler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Scribbler.framework; path = Frameworks/Scribbler.framework; sourceTree = "<group>"; };
+		83F55CF615A4F6D600D9DF41 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
+		83F55CF715A4F6D600D9DF41 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +146,7 @@
 		5C5F6389145B04E10004D651 /* Scrobbler */ = {
 			isa = PBXGroup;
 			children = (
+				83F55CF515A4F6D600D9DF41 /* Classes */,
 				5C297DCC146375410050C8DE /* MPFunctions.h */,
 				5C297DCD146375410050C8DE /* MPFunctions.m */,
 				5C297DCE146375410050C8DE /* MPTidbits.h */,
@@ -156,10 +154,6 @@
 				5C297DD0146375410050C8DE /* NSCollections+MPTidbits.m */,
 				5C297DD1146375410050C8DE /* NSString+MPTidbits.h */,
 				5C297DD2146375410050C8DE /* NSString+MPTidbits.m */,
-				5C297DC6146374F70050C8DE /* EMKeychainItem.h */,
-				5C297DC7146374F70050C8DE /* EMKeychainItem.m */,
-				5C297DC8146374F70050C8DE /* EMKeychainProxy.h */,
-				5C297DC9146374F70050C8DE /* EMKeychainProxy.m */,
 				5C297DBC146374E60050C8DE /* SYUIController.h */,
 				5C297DBD146374E60050C8DE /* SYUIController.m */,
 				5C297DBE146374E60050C8DE /* SYLCDView.h */,
@@ -191,6 +185,15 @@
 				5C5F6392145B04E10004D651 /* Credits.rtf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		83F55CF515A4F6D600D9DF41 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				83F55CF615A4F6D600D9DF41 /* EMKeychainItem.h */,
+				83F55CF715A4F6D600D9DF41 /* EMKeychainItem.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,11 +269,10 @@
 				5C297DC2146374E60050C8DE /* SYUIController.m in Sources */,
 				5C297DC3146374E60050C8DE /* SYLCDView.m in Sources */,
 				5C297DC4146374E60050C8DE /* SYWhiteView.m in Sources */,
-				5C297DCA146374F70050C8DE /* EMKeychainItem.m in Sources */,
-				5C297DCB146374F70050C8DE /* EMKeychainProxy.m in Sources */,
 				5C297DD3146375410050C8DE /* MPFunctions.m in Sources */,
 				5C297DD4146375410050C8DE /* NSCollections+MPTidbits.m in Sources */,
 				5C297DD5146375410050C8DE /* NSString+MPTidbits.m in Sources */,
+				83F55CF815A4F6D600D9DF41 /* EMKeychainItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

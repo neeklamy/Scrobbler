@@ -9,7 +9,6 @@
 #import "ScrobblerAppDelegate.h"
 #import "MPTidbits.h"
 #import "EMKeychainItem.h"
-#import "EMKeychainProxy.h"
 #import "SYUIController.h"
 
 @implementation ScrobblerAppDelegate
@@ -130,7 +129,7 @@
 	
 	// And clear the Keychain info
 	NSString *keychainService = [NSString stringWithFormat:@"Last.fm (%@)", [[NSBundle mainBundle] bundleIdentifier]];
-	EMGenericKeychainItem *keyItem = [[EMKeychainProxy sharedProxy] genericKeychainItemForService:keychainService withUsername:theUser];
+	EMGenericKeychainItem *keyItem = [EMGenericKeychainItem genericKeychainItemForService:keychainService withUsername:theUser];
 	if (keyItem)
 		[keyItem setPassword:@""];
 	
@@ -152,7 +151,7 @@
 		NSString *theUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastFMUsername"];
 		
 		NSString *keychainService = [NSString stringWithFormat:@"Last.fm (%@)", [[NSBundle mainBundle] bundleIdentifier]];
-		EMGenericKeychainItem *keyItem = [[EMKeychainProxy sharedProxy] genericKeychainItemForService:keychainService withUsername:theUser];
+		EMGenericKeychainItem *keyItem = [EMGenericKeychainItem genericKeychainItemForService:keychainService withUsername:theUser];
 		if (keyItem)
 		{
 			// we'll set both the user and session key in the web service
@@ -210,11 +209,11 @@
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LastFMConfigured"];
 	
 	NSString *keychainService = [NSString stringWithFormat:@"Last.fm (%@)", [[NSBundle mainBundle] bundleIdentifier]];
-	EMGenericKeychainItem *keyItem = [[EMKeychainProxy sharedProxy] genericKeychainItemForService:keychainService withUsername:theUser];
+	EMGenericKeychainItem *keyItem = [EMGenericKeychainItem genericKeychainItemForService:keychainService withUsername:theUser];
 	if (keyItem)
 		[keyItem setPassword:theKey];
 	else
-		[[EMKeychainProxy sharedProxy] addGenericKeychainItemForService:keychainService withUsername:theUser password:theKey];
+		[EMGenericKeychainItem addGenericKeychainItemForService:keychainService withUsername:theUser password:theKey];
 	
 	// Hooray! we're up and running
 	[ui showConnectedWithUser:theUser];
