@@ -65,14 +65,14 @@
 		5C297DD0146375410050C8DE /* NSCollections+MPTidbits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCollections+MPTidbits.m"; sourceTree = "<group>"; };
 		5C297DD1146375410050C8DE /* NSString+MPTidbits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MPTidbits.h"; sourceTree = "<group>"; };
 		5C297DD2146375410050C8DE /* NSString+MPTidbits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MPTidbits.m"; sourceTree = "<group>"; };
-		5C297DD6146375850050C8DE /* lcd-ban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lcd-ban.png"; sourceTree = "<group>"; };
-		5C297DD7146375850050C8DE /* lcd-love.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lcd-love.png"; sourceTree = "<group>"; };
-		5C297DD8146375850050C8DE /* love.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = love.png; sourceTree = "<group>"; };
-		5C297DD9146375850050C8DE /* ban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ban.png; sourceTree = "<group>"; };
-		5C297DDA146375850050C8DE /* lcd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lcd.png; sourceTree = "<group>"; };
-		5C297DDB146375850050C8DE /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		5C297DEF1463982D0050C8DE /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
-		5C297DF1146398410050C8DE /* star.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = star.tiff; sourceTree = "<group>"; };
+		5C297DD6146375850050C8DE /* lcd-ban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lcd-ban.png"; path = "Resources/lcd-ban.png"; sourceTree = "<group>"; };
+		5C297DD7146375850050C8DE /* lcd-love.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lcd-love.png"; path = "Resources/lcd-love.png"; sourceTree = "<group>"; };
+		5C297DD8146375850050C8DE /* love.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = love.png; path = Resources/love.png; sourceTree = "<group>"; };
+		5C297DD9146375850050C8DE /* ban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ban.png; path = Resources/ban.png; sourceTree = "<group>"; };
+		5C297DDA146375850050C8DE /* lcd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lcd.png; path = Resources/lcd.png; sourceTree = "<group>"; };
+		5C297DDB146375850050C8DE /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = Resources/MainMenu.xib; sourceTree = "<group>"; };
+		5C297DEF1463982D0050C8DE /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stop.png; path = Resources/stop.png; sourceTree = "<group>"; };
+		5C297DF1146398410050C8DE /* star.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = star.tiff; path = Resources/star.tiff; sourceTree = "<group>"; };
 		5C5F637F145B04E00004D651 /* Scrobbler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrobbler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5F6383145B04E10004D651 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5C5F6386145B04E10004D651 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -168,12 +168,12 @@
 				5C297DC1146374E60050C8DE /* SYWhiteView.m */,
 				5C5F6395145B04E10004D651 /* ScrobblerAppDelegate.h */,
 				5C5F6396145B04E10004D651 /* ScrobblerAppDelegate.m */,
-				5C5F638A145B04E10004D651 /* Supporting Files */,
+				5C5F638A145B04E10004D651 /* Resources */,
 			);
 			path = Scrobbler;
 			sourceTree = "<group>";
 		};
-		5C5F638A145B04E10004D651 /* Supporting Files */ = {
+		5C5F638A145B04E10004D651 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				5C297DD6146375850050C8DE /* lcd-ban.png */,
@@ -190,7 +190,7 @@
 				5C5F6391145B04E10004D651 /* Scrobbler-Prefix.pch */,
 				5C5F6392145B04E10004D651 /* Credits.rtf */,
 			);
-			name = "Supporting Files";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
