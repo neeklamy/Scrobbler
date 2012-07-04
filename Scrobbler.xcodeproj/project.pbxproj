@@ -147,21 +147,10 @@
 			isa = PBXGroup;
 			children = (
 				83F55CF515A4F6D600D9DF41 /* Classes */,
+				83F55CF915A4FAD200D9DF41 /* Categories */,
 				5C297DCC146375410050C8DE /* MPFunctions.h */,
 				5C297DCD146375410050C8DE /* MPFunctions.m */,
 				5C297DCE146375410050C8DE /* MPTidbits.h */,
-				5C297DCF146375410050C8DE /* NSCollections+MPTidbits.h */,
-				5C297DD0146375410050C8DE /* NSCollections+MPTidbits.m */,
-				5C297DD1146375410050C8DE /* NSString+MPTidbits.h */,
-				5C297DD2146375410050C8DE /* NSString+MPTidbits.m */,
-				5C297DBC146374E60050C8DE /* SYUIController.h */,
-				5C297DBD146374E60050C8DE /* SYUIController.m */,
-				5C297DBE146374E60050C8DE /* SYLCDView.h */,
-				5C297DBF146374E60050C8DE /* SYLCDView.m */,
-				5C297DC0146374E60050C8DE /* SYWhiteView.h */,
-				5C297DC1146374E60050C8DE /* SYWhiteView.m */,
-				5C5F6395145B04E10004D651 /* ScrobblerAppDelegate.h */,
-				5C5F6396145B04E10004D651 /* ScrobblerAppDelegate.m */,
 				5C5F638A145B04E10004D651 /* Resources */,
 			);
 			path = Scrobbler;
@@ -190,10 +179,29 @@
 		83F55CF515A4F6D600D9DF41 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5C5F6395145B04E10004D651 /* ScrobblerAppDelegate.h */,
+				5C5F6396145B04E10004D651 /* ScrobblerAppDelegate.m */,
+				5C297DBC146374E60050C8DE /* SYUIController.h */,
+				5C297DBD146374E60050C8DE /* SYUIController.m */,
+				5C297DBE146374E60050C8DE /* SYLCDView.h */,
+				5C297DBF146374E60050C8DE /* SYLCDView.m */,
+				5C297DC0146374E60050C8DE /* SYWhiteView.h */,
+				5C297DC1146374E60050C8DE /* SYWhiteView.m */,
 				83F55CF615A4F6D600D9DF41 /* EMKeychainItem.h */,
 				83F55CF715A4F6D600D9DF41 /* EMKeychainItem.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		83F55CF915A4FAD200D9DF41 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5C297DCF146375410050C8DE /* NSCollections+MPTidbits.h */,
+				5C297DD0146375410050C8DE /* NSCollections+MPTidbits.m */,
+				5C297DD1146375410050C8DE /* NSString+MPTidbits.h */,
+				5C297DD2146375410050C8DE /* NSString+MPTidbits.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
