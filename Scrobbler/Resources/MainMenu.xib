@@ -652,7 +652,7 @@
 					</object>
 					<object class="NSMenuItem" id="954070352">
 						<reference key="NSMenu" ref="594617781"/>
-						<string key="NSTitle">Disable Scrobbling</string>
+						<string key="NSTitle">Enable Scrobbling</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="187062404"/>

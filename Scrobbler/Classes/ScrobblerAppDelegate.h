@@ -55,6 +55,8 @@
     IBOutlet NSTextField *Scrobblerstatus;
 }
 
+@property (nonatomic) BOOL scrobblingEnabled;
+
 // Application delegate methods
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
 - (BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication;

@@ -38,6 +38,8 @@
 
 @implementation ScrobblerAppDelegate
 
+@synthesize scrobblingEnabled;
+
 #pragma mark Initializers
 + (void)initialize
 {
@@ -371,20 +373,20 @@
 }
 
 - (IBAction)togglescrobbling:(id)sender {
-		if (ScrrobleState == TRUE) {
-			[ToggleScrobbling setTitle:@"Enable Scrobbling"];
-            [Scrobblerstatus setStringValue:@"Scrobbling is disabled."];
-			//Set Scrobbling State to true
-			ScrrobleState = FALSE;
-		}
-		else {
-			[ToggleScrobbling setTitle:@"Disable Scrobbling"];
-            [Scrobblerstatus setStringValue:@"Scrobbling is enabled."];
-			//Set Scrobbling State to false
-			ScrrobleState = TRUE;
-		}
-	
-}
 
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	BOOL isEnabled = [[defaults valueForKey:@"scrobblingEnabled"] boolValue];
+
+	if (isEnabled == YES) {
+		[Scrobblerstatus setStringValue:@"Scrobbling is disabled."];
+		ScrrobleState = NO;
+	} else {
+		[Scrobblerstatus setStringValue:@"Scrobbling is enabled."];
+		ScrrobleState = YES;
+	}
+
+	[ToggleScrobbling setState:ScrrobleState];
+	[defaults setValue:[NSNumber numberWithBool:ScrrobleState] forKey:@"scrobblingEnabled"];
+}
 
 @end
