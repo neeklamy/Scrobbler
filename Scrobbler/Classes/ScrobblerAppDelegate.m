@@ -46,10 +46,10 @@
 	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"LastFMConfigured", @"", @"LastFMUsername", nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
-- (id)init
-{
-	if (self = [super init])
-	{
+
+- (id)init {
+	if (self = [super init]) {
+		ScrrobleState = [[[NSUserDefaults standardUserDefaults] valueForKey:@"scrobblingEnabled"] boolValue];
 		recentTracks = [[NSMutableArray alloc] init];
 		wasPlaying = NO;
 	}
@@ -116,8 +116,8 @@
     [statusItem setToolTip:@"Scrobbler"];
     //Enables highlighting
     [statusItem setHighlightMode:YES];
-    //Set Scrobble Endabled
-    ScrrobleState = TRUE;
+
+	[ToggleScrobbling setState:ScrrobleState];
 }
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
 {
