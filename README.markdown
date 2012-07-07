@@ -1,14 +1,14 @@
 Scrobbler
 =========
 
-Scrobbler is a minimalist Last.fm scrobbler for OS X. It was originally created as a simple demo application for the [Scribbler framework](https://github.com/13bold/Scribbler/) by Matt Patenaude of [{13bold}](http://13bold.com/) and later forked and developed by James H ([chikorita157](https://github.com/chikorita157/Scrobbler))
+Scrobbler is a minimalist Last.fm scrobbler for OS X. It was originally created as a simple demo application for the [Scribbler framework](https://github.com/13bold/Scribbler) by Matt Patenaude of [{13bold}](http://13bold.com/) and later forked and developed by James H ([chikorita157](https://github.com/chikorita157/Scrobbler))
 
-Additional work by Christopher Corbettis.
+Additional work by Christopher Corbettis ([neeklamy](http://pitthy.com/)).
 
 Licensing
 ---------
 
-Scribbler is licensed under the MIT license, excerpted below.
+Scrobbler is licensed under the MIT license, excerpted below.
 
 	Copyright 2009 {13bold}. All rights reserved.
 
