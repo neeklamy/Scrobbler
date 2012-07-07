@@ -41,9 +41,12 @@
 @synthesize scrobblingEnabled;
 
 #pragma mark Initializers
-+ (void)initialize
-{
-	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"LastFMConfigured", @"", @"LastFMUsername", nil];
+
++ (void)initialize {
+	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
+							  [NSNumber numberWithBool:NO], @"LastFMConfigured",
+							  [NSNumber numberWithBool:NO], @"LastFMEnabled",
+							  nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
