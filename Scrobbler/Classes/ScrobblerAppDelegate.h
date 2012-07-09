@@ -51,9 +51,9 @@
 	
 	BOOL authorizationPending;
     IBOutlet NSMenuItem *ToggleScrobbling;
-    IBOutlet NSTextField *Scrobblerstatus;
 }
 
+@property (nonatomic, retain) IBOutlet NSTextField *scrobblerStatus;
 @property (nonatomic) BOOL scrobblingEnabled;
 
 // Application delegate methods

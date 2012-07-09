@@ -39,6 +39,7 @@
 @implementation ScrobblerAppDelegate
 
 @synthesize
+	scrobblerStatus,
 	scrobblingEnabled;
 
 #pragma mark Initializers
