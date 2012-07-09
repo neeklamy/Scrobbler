@@ -38,7 +38,8 @@
 
 @implementation ScrobblerAppDelegate
 
-@synthesize scrobblingEnabled;
+@synthesize
+	scrobblingEnabled;
 
 #pragma mark Initializers
 
@@ -52,7 +53,7 @@
 
 - (id)init {
 	if (self = [super init]) {
-		ScrrobleState = [[[NSUserDefaults standardUserDefaults] valueForKey:@"scrobblingEnabled"] boolValue];
+		scrobblingEnabled = [[[NSUserDefaults standardUserDefaults] valueForKey:@"scrobblingEnabled"] boolValue];
 		recentTracks = [[NSMutableArray alloc] init];
 		wasPlaying = NO;
 	}
@@ -120,7 +121,7 @@
     //Enables highlighting
     [statusItem setHighlightMode:YES];
 
-	[ToggleScrobbling setState:ScrrobleState];
+	[ToggleScrobbling setState:scrobblingEnabled];
 }
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
 {
@@ -292,7 +293,7 @@
 		// Scrobble if it's necessary
 		if (currentTrack)
 		{
-            if (ScrrobleState == TRUE) {
+            if (scrobblingEnabled == YES) {
 			[currentTrack stop];
             }
 			[currentTrack release];
@@ -310,7 +311,7 @@
 		// Scrobble if it's necessary
 		if (currentTrack)
 		{
-			if (ScrrobleState == TRUE) {
+			if (scrobblingEnabled == YES) {
                 [currentTrack stop];
             }
 			[currentTrack release];
@@ -328,7 +329,7 @@
 		NSString *trackName = [info objectForKey:@"Name"];
 		NSString *trackArtist = [info objectForKey:@"Artist"];
 		CGFloat totalTime = [(NSNumber *)[info objectForKey:@"Total Time"] floatValue] / 1000.0;
-		if (ScrrobleState == TRUE) {
+		if (scrobblingEnabled == YES) {
 		LFTrack *theTrack = [LFTrack trackWithTitle:trackName artist:trackArtist duration:totalTime];
 		if ([info containsKey:@"Album"])
 			[theTrack setAlbum:[info objectForKey:@"Album"]];
@@ -381,15 +382,15 @@
 	BOOL isEnabled = [[defaults valueForKey:@"scrobblingEnabled"] boolValue];
 
 	if (isEnabled == YES) {
-		[Scrobblerstatus setStringValue:@"Scrobbling is disabled."];
-		ScrrobleState = NO;
+		[scrobblerStatus setStringValue:@"Scrobbling is disabled."];
+		scrobblingEnabled = NO;
 	} else {
-		[Scrobblerstatus setStringValue:@"Scrobbling is enabled."];
-		ScrrobleState = YES;
+		[scrobblerStatus setStringValue:@"Scrobbling is enabled."];
+		scrobblingEnabled = YES;
 	}
 
-	[ToggleScrobbling setState:ScrrobleState];
-	[defaults setValue:[NSNumber numberWithBool:ScrrobleState] forKey:@"scrobblingEnabled"];
+	[ToggleScrobbling setState:scrobblingEnabled];
+	[defaults setValue:[NSNumber numberWithBool:scrobblingEnabled] forKey:@"scrobblingEnabled"];
 }
 
 @end

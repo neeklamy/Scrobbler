@@ -50,7 +50,6 @@
 	BOOL wasPlaying;
 	
 	BOOL authorizationPending;
-    BOOL ScrrobleState;
     IBOutlet NSMenuItem *ToggleScrobbling;
     IBOutlet NSTextField *Scrobblerstatus;
 }
