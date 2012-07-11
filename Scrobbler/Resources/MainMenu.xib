@@ -592,12 +592,6 @@
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
-			<object class="NSCustomObject" id="721588658">
-				<string key="NSClassName">ScrobblerAppDelegate</string>
-			</object>
-			<object class="NSCustomObject" id="306478603">
-				<string key="NSClassName">SYUIController</string>
-			</object>
 			<object class="NSMenu" id="594617781">
 				<string key="NSTitle"/>
 				<array class="NSMutableArray" key="NSMenuItems">
@@ -685,6 +679,12 @@
 						<reference key="NSMixedImage" ref="780189627"/>
 					</object>
 				</array>
+			</object>
+			<object class="NSCustomObject" id="721588658">
+				<string key="NSClassName">ScrobblerAppDelegate</string>
+			</object>
+			<object class="NSCustomObject" id="306478603">
+				<string key="NSClassName">SYUIController</string>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1385,18 +1385,14 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="Scrobblerstatus">NSTextField</string>
 						<string key="ToggleScrobbling">NSMenuItem</string>
 						<string key="mainWindow">NSWindow</string>
+						<string key="scrobblerStatus">NSTextField</string>
 						<string key="statusMenu">NSMenu</string>
 						<string key="trackTableView">NSTableView</string>
 						<string key="ui">SYUIController</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="Scrobblerstatus">
-							<string key="name">Scrobblerstatus</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="ToggleScrobbling">
 							<string key="name">ToggleScrobbling</string>
 							<string key="candidateClassName">NSMenuItem</string>
@@ -1404,6 +1400,10 @@
 						<object class="IBToOneOutletInfo" key="mainWindow">
 							<string key="name">mainWindow</string>
 							<string key="candidateClassName">NSWindow</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="scrobblerStatus">
+							<string key="name">scrobblerStatus</string>
+							<string key="candidateClassName">NSTextField</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="statusMenu">
 							<string key="name">statusMenu</string>
