@@ -53,6 +53,7 @@
     IBOutlet NSMenuItem *ToggleScrobbling;
 }
 
+@property (assign) NSMutableArray *recentTracks;
 @property (nonatomic, retain) IBOutlet NSTextField *scrobblerStatus;
 @property (nonatomic) BOOL scrobblingEnabled;
 
@@ -85,10 +86,6 @@
 - (void)playerInfoChanged:(NSNotification *)theNotification;
 - (IBAction)loveTrack:(id)sender;
 - (IBAction)banTrack:(id)sender;
-
-// Table data source methods
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView;
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex;
 
 //Menu Commands
 - (IBAction)togglescrobbling:(id)sender;

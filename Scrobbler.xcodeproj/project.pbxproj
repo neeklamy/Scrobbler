@@ -30,6 +30,7 @@
 		5C5F63A1145B056E0004D651 /* Scribbler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5F63A0145B056E0004D651 /* Scribbler.framework */; };
 		5C5F63A3145B05830004D651 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5F63A2145B05830004D651 /* Carbon.framework */; };
 		5C5F63A5145B05910004D651 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5F63A4145B05910004D651 /* Security.framework */; };
+		8345502315AB5454000B9605 /* TrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345502215AB5453000B9605 /* TrackInfo.m */; };
 		83F55CF815A4F6D600D9DF41 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F55CF715A4F6D600D9DF41 /* EMKeychainItem.m */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,8 @@
 		5C5F63A2145B05830004D651 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		5C5F63A4145B05910004D651 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5C5F63A6145B05A40004D651 /* Scribbler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Scribbler.framework; path = Frameworks/Scribbler.framework; sourceTree = "<group>"; };
+		8345502115AB5453000B9605 /* TrackInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackInfo.h; sourceTree = "<group>"; };
+		8345502215AB5453000B9605 /* TrackInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackInfo.m; sourceTree = "<group>"; };
 		83F55CF615A4F6D600D9DF41 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
 		83F55CF715A4F6D600D9DF41 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +190,8 @@
 				5C297DBF146374E60050C8DE /* SYLCDView.m */,
 				5C297DC0146374E60050C8DE /* SYWhiteView.h */,
 				5C297DC1146374E60050C8DE /* SYWhiteView.m */,
+				8345502115AB5453000B9605 /* TrackInfo.h */,
+				8345502215AB5453000B9605 /* TrackInfo.m */,
 				83F55CF615A4F6D600D9DF41 /* EMKeychainItem.h */,
 				83F55CF715A4F6D600D9DF41 /* EMKeychainItem.m */,
 			);
@@ -281,6 +286,7 @@
 				5C297DD4146375410050C8DE /* NSCollections+MPTidbits.m in Sources */,
 				5C297DD5146375410050C8DE /* NSString+MPTidbits.m in Sources */,
 				83F55CF815A4F6D600D9DF41 /* EMKeychainItem.m in Sources */,
+				8345502315AB5454000B9605 /* TrackInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

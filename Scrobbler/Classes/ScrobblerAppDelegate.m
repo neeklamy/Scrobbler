@@ -35,10 +35,12 @@
 #import "MPTidbits.h"
 #import "EMKeychainItem.h"
 #import "SYUIController.h"
+#import "TrackInfo.h"
 
 @implementation ScrobblerAppDelegate
 
 @synthesize
+	recentTracks,
 	scrobblerStatus,
 	scrobblingEnabled;
 
@@ -274,9 +276,9 @@
 
 - (void)scrobbleSucceededForTrack:(LFTrack *)theTrack
 {
-	NSString *tname = [NSString stringWithFormat:@"%@ (%@)", [theTrack title], [theTrack artist]];
-	[recentTracks insertObject:tname atIndex:0];
-	[trackTableView reloadData];
+	TrackInfo *newTrack = [[TrackInfo alloc] init];
+	newTrack.title = [NSString stringWithFormat:@"%@ (%@)", [theTrack title], [theTrack artist]];
+	[self insertObject:newTrack inRecentTracksAtIndex:0];
 }
 - (void)scrobbleFailedForTrack:(LFTrack *)theTrack error:(NSError *)theError willRetry:(BOOL)willRetry
 {
@@ -367,16 +369,6 @@
 		[currentTrack ban];
 }
 
-#pragma mark Table data source methods
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
-{
-	return [recentTracks count];
-}
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
-{
-	return [recentTracks objectAtIndex:rowIndex];
-}
-
 - (IBAction)togglescrobbling:(id)sender {
 
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -392,6 +384,16 @@
 
 	[ToggleScrobbling setState:scrobblingEnabled];
 	[defaults setValue:[NSNumber numberWithBool:scrobblingEnabled] forKey:@"scrobblingEnabled"];
+}
+
+#pragma mark - KVO
+
+- (void)insertObject:(id)object inRecentTracksAtIndex:(NSUInteger)index {
+	[recentTracks insertObject:object atIndex:index];
+}
+
+- (void)removeObjectFromRecentTracksAtIndex:(NSUInteger)index {
+	[recentTracks removeObjectAtIndex:index];
 }
 
 @end
