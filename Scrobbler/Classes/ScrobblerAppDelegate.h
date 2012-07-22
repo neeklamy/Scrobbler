@@ -47,7 +47,6 @@
 	
 	LFTrack *currentTrack;
 	NSUInteger currentTrackID;
-	BOOL wasPlaying;
 	
 	BOOL authorizationPending;
     IBOutlet NSMenuItem *ToggleScrobbling;

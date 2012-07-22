@@ -58,7 +58,6 @@
 	if (self = [super init]) {
 		scrobblingEnabled = [[[NSUserDefaults standardUserDefaults] valueForKey:@"scrobblingEnabled"] boolValue];
 		recentTracks = [[NSMutableArray alloc] init];
-		wasPlaying = NO;
 	}
 	return self;
 }
@@ -286,78 +285,70 @@
 }
 
 
-#pragma mark Tracking methods
-- (void)playerInfoChanged:(NSNotification *)theNotification
-{
+#pragma mark - Tracking
+
+- (void)playerInfoChanged:(NSNotification *)theNotification {
 	NSDictionary *info = [theNotification userInfo];
-	
-	if ([[info objectForKey:@"Player State"] isEqualToString:@"Stopped"])
-	{
-		// Scrobble if it's necessary
-		if (currentTrack)
-		{
-            if (scrobblingEnabled == YES) {
-			[currentTrack stop];
-            }
-			[currentTrack release];
-			currentTrack = nil;
-			wasPlaying = NO;
-		}
+	NSString *playerState =	[info objectForKey:@"Player State"];
+
+	/// Is track a podcast? We can't rely on looking at the genre tag because it isn't always correctly set
+	NSPredicate *podcastPredicate = [NSPredicate predicateWithFormat:@"SELF BEGINSWITH %@", @"itms://itunes.com/link?podcast"];
+	NSString *storeURL = [info valueForKey:@"Store URL"];
+	BOOL isPodcast = [podcastPredicate evaluateWithObject:storeURL];
+	BOOL scrobbleTrack = NO;
+
+	if (scrobblingEnabled &&
+		!isPodcast) {
+		scrobbleTrack = YES;
+	}
+
+	if ([playerState isEqualToString:@"Stopped"]) {
+		[currentTrack stopAndScrobble:scrobbleTrack];
+		[currentTrack release];
+		currentTrack = nil;
+		currentTrackID = 0;
 		[ui nothingPlaying];
 		return;
 	}
-	
-	// check persistentID
-	NSUInteger theID = [(NSNumber *)[info objectForKey:@"PersistentID"] unsignedIntegerValue];
-	if (currentTrackID != theID)
-	{
-		// Scrobble if it's necessary
-		if (currentTrack)
-		{
-			if (scrobblingEnabled == YES) {
-                [currentTrack stop];
-            }
+
+	if ( [playerState isEqualToString:@"Playing"] &&
+		(![info containsKey:@"Name"] || ![info containsKey:@"Artist"]) ) {
+		[ui unusableTrack];
+		return;
+	}
+
+	if ([playerState isEqualToString:@"Paused"]) {
+		[currentTrack pause];
+	} else if ([playerState isEqualToString:@"Playing"]) {
+		NSUInteger aTrackID = [[info objectForKey:@"PersistentID"] unsignedIntegerValue];
+
+		if (currentTrackID != aTrackID) { 
+			[currentTrack stopAndScrobble:scrobbleTrack];
 			[currentTrack release];
 			currentTrack = nil;
-			wasPlaying = NO;
+			currentTrackID = 0;
+			
+			NSString *trackName = [info objectForKey:@"Name"];
+			NSString *trackArtist = [info objectForKey:@"Artist"];
+			
+			if (scrobbleTrack) {
+				CGFloat totalTime = [[info objectForKey:@"Total Time"] floatValue] / 1000.0;
+				LFTrack *theTrack = [LFTrack trackWithTitle:trackName artist:trackArtist duration:totalTime];
+				[theTrack setAlbum:[info objectForKey:@"Album"]];
+				[theTrack setAlbumPosition:[[info objectForKey:@"Track Number"] unsignedIntegerValue]];
+				currentTrack = [theTrack retain];
+				currentTrackID = aTrackID;
+			}
+			NSString *subline = ([info containsKey:@"Album"]) ? [NSString stringWithFormat:@"%@ - %@", trackArtist, [info objectForKey:@"Album"]] : trackArtist;
+			[ui displayTrack:trackName subline:subline];
 		}
-		
-		// the track changed
-		if (![info containsKey:@"Name"] || ![info containsKey:@"Artist"])
-		{
-			[ui unusableTrack];
-			return;
-		}
-		
-		NSString *trackName = [info objectForKey:@"Name"];
-		NSString *trackArtist = [info objectForKey:@"Artist"];
-		CGFloat totalTime = [(NSNumber *)[info objectForKey:@"Total Time"] floatValue] / 1000.0;
-		if (scrobblingEnabled == YES) {
-		LFTrack *theTrack = [LFTrack trackWithTitle:trackName artist:trackArtist duration:totalTime];
-		if ([info containsKey:@"Album"])
-			[theTrack setAlbum:[info objectForKey:@"Album"]];
-		if ([info containsKey:@"Track Number"])
-			[theTrack setAlbumPosition:[(NSNumber *)[info objectForKey:@"Track Number"] unsignedIntegerValue]];
-        currentTrack = [theTrack retain];
-        currentTrackID = theID;
-		}
-		NSString *subline = ([info containsKey:@"Album"]) ? [NSString stringWithFormat:@"%@ - %@", trackArtist, [info objectForKey:@"Album"]] : trackArtist;
-		[ui displayTrack:trackName subline:subline];
-		
 
-	}
-	
-	if ([[info objectForKey:@"Player State"] isEqualToString:@"Playing"] && !wasPlaying)
-	{
-		[currentTrack play];
-		wasPlaying = YES;
-	}
-	if ([[info objectForKey:@"Player State"] isEqualToString:@"Paused"] && wasPlaying)
-	{
-		[currentTrack pause];
-		wasPlaying = NO;
+		if (scrobbleTrack) {
+			[currentTrack play];
+		}
 	}
 }
+
 - (IBAction)loveTrack:(id)sender
 {
 	if (currentTrack)
