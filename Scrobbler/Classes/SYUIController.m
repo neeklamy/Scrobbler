@@ -29,19 +29,6 @@
 
 @implementation SYUIController
 
-#pragma mark Initializers
-- (void)awakeFromNib
-{
-	[self composeInterface];
-}
-
-#pragma mark Composition methods
-- (void)composeInterface
-{
-	// apply the bottom bar
-	[mainWindow setContentBorderThickness:23.0 forEdge:NSMinYEdge];
-}
-
 #pragma mark Display methods
 - (void)unusableTrack
 {

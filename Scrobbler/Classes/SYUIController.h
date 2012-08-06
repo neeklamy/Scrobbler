@@ -40,9 +40,6 @@
     IBOutlet NSMenuItem *menuPlayingSongSep;
 }
 
-// Composition methods
-- (void)composeInterface;
-
 // Display methods
 - (void)unusableTrack;
 - (void)nothingPlaying;
