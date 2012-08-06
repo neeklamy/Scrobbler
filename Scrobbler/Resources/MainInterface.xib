@@ -87,7 +87,7 @@
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMinSize">{300, 200}</string>
+				<string key="NSWindowContentMinSize">{420, 215}</string>
 				<object class="NSView" key="NSWindowView" id="414427165">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -110,7 +110,7 @@
 													<string key="NSFrameSize">{378, 96}</string>
 													<reference key="NSSuperview" ref="311723623"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="1010528747"/>
+													<reference key="NSNextKeyView" ref="371665662"/>
 													<bool key="NSEnabled">YES</bool>
 													<object class="_NSCornerView" key="NSCornerView">
 														<nil key="NSNextResponder"/>
@@ -234,7 +234,7 @@
 									<string key="NSFrame">{{20, 20}, {380, 98}}</string>
 									<reference key="NSSuperview" ref="611038825"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView" ref="311723623"/>
+									<reference key="NSNextKeyView" ref="1010528747"/>
 									<int key="NSsFlags">133650</int>
 									<reference key="NSVScroller" ref="371665662"/>
 									<reference key="NSHScroller" ref="1010528747"/>
@@ -244,7 +244,7 @@
 								<object class="NSTextField" id="826397605">
 									<reference key="NSNextResponder" ref="611038825"/>
 									<int key="NSvFlags">266</int>
-									<string key="NSFrame">{{17, 128}, {237, 17}}</string>
+									<string key="NSFrame">{{17, 128}, {386, 17}}</string>
 									<reference key="NSSuperview" ref="611038825"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="1054158073"/>
@@ -252,7 +252,7 @@
 									<object class="NSTextFieldCell" key="NSCell" id="666926351">
 										<int key="NSCellFlags">67239488</int>
 										<int key="NSCellFlags2">272631808</int>
-										<string key="NSContents">Recently Scrobbled Tracks</string>
+										<string key="NSContents">Recently Scrobbled</string>
 										<object class="NSFont" key="NSSupport" id="1022194814">
 											<string key="NSName">LucidaGrande</string>
 											<double key="NSSize">13</double>
@@ -362,7 +362,7 @@
 					<reference key="NSNextKeyView" ref="986824926"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
-				<string key="NSMinSize">{300, 222}</string>
+				<string key="NSMinSize">{420, 237}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -905,6 +905,8 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<boolean value="YES" key="367.IBNSWindowAutoPositionCentersHorizontal"/>
+				<boolean value="YES" key="367.IBNSWindowAutoPositionCentersVertical"/>
 				<string key="367.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="367.IBWindowTemplateEditedContentRect">{{357, 467}, {420, 215}}</string>
 				<integer value="1" key="367.NSWindowTemplate.visibleAtLaunch"/>
