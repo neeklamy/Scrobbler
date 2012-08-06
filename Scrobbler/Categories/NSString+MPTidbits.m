@@ -49,14 +49,14 @@
 {
 	const char *input = [self UTF8String];
 	unsigned char result[CC_MD5_DIGEST_LENGTH];
-	CC_MD5(input, strlen(input), result);
+	CC_MD5(input, (CC_LONG)strlen(input), result);
 	return MPHexStringFromBytes(result, CC_MD5_DIGEST_LENGTH);
 }
 - (NSString *)SHA1Hash
 {
 	const char *input = [self UTF8String];
 	unsigned char result[CC_SHA1_DIGEST_LENGTH];
-	CC_SHA1(input, strlen(input), result);
+	CC_SHA1(input, (CC_LONG)strlen(input), result);
 	return MPHexStringFromBytes(result, CC_SHA1_DIGEST_LENGTH);
 }
 
