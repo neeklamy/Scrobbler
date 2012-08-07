@@ -23,6 +23,7 @@
 			<string>NSTableView</string>
 			<string>NSTextField</string>
 			<string>NSTextFieldCell</string>
+			<string>NSUserDefaultsController</string>
 			<string>NSView</string>
 			<string>NSWindowTemplate</string>
 		</array>
@@ -434,6 +435,14 @@
 						<reference key="NSOnImage" ref="187062404"/>
 						<reference key="NSMixedImage" ref="780189627"/>
 					</object>
+					<object class="NSMenuItem" id="1006665644">
+						<reference key="NSMenu" ref="594617781"/>
+						<string key="NSTitle">Preferences…</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="187062404"/>
+						<reference key="NSMixedImage" ref="780189627"/>
+					</object>
 					<object class="NSMenuItem" id="200845171">
 						<reference key="NSMenu" ref="594617781"/>
 						<bool key="NSIsDisabled">YES</bool>
@@ -475,6 +484,9 @@
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
+			<object class="NSUserDefaultsController" id="909448757">
+				<bool key="NSSharedInstance">YES</bool>
+			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<array class="NSMutableArray" key="connectionRecords">
@@ -512,6 +524,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
+						<string key="label">showPreferences:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="1006665644"/>
+					</object>
+					<int key="connectionID">956</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
 						<string key="label">orderFront:</string>
 						<reference key="source" ref="513744381"/>
 						<reference key="destination" ref="680136066"/>
@@ -541,14 +561,6 @@
 						<reference key="destination" ref="594617781"/>
 					</object>
 					<int key="connectionID">879</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">togglescrobbling:</string>
-						<reference key="source" ref="721588658"/>
-						<reference key="destination" ref="954070352"/>
-					</object>
-					<int key="connectionID">934</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -625,6 +637,22 @@
 						</object>
 					</object>
 					<int key="connectionID">954</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.scrobblingEnabled</string>
+						<reference key="source" ref="954070352"/>
+						<reference key="destination" ref="909448757"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="954070352"/>
+							<reference key="NSDestination" ref="909448757"/>
+							<string key="NSLabel">value: values.scrobblingEnabled</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.scrobblingEnabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">964</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -844,6 +872,7 @@
 							<reference ref="122577126"/>
 							<reference ref="27959286"/>
 							<reference ref="954070352"/>
+							<reference ref="1006665644"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -898,6 +927,16 @@
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Tracks</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">955</int>
+						<reference key="object" ref="1006665644"/>
+						<reference key="parent" ref="594617781"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">962</int>
+						<reference key="object" ref="909448757"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -942,12 +981,14 @@
 				<string key="931.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="933.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="950.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="955.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="962.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">954</int>
+			<int key="maxID">966</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1027,7 +1068,7 @@
 						<string key="connectWithLastFM:">id</string>
 						<string key="disconnectFromLastFM:">id</string>
 						<string key="loveTrack:">id</string>
-						<string key="togglescrobbling:">id</string>
+						<string key="showPreferences:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="banTrack:">
@@ -1046,8 +1087,8 @@
 							<string key="name">loveTrack:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="togglescrobbling:">
-							<string key="name">togglescrobbling:</string>
+						<object class="IBActionInfo" key="showPreferences:">
+							<string key="name">showPreferences:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
