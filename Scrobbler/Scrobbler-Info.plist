@@ -32,7 +32,7 @@
 	<string>MainInterface</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>NSUIElement</key>
-	<string>1</string>
+	<key>LSUIElement</key>
+	<true/>
 </dict>
 </plist>
