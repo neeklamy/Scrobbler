@@ -42,7 +42,8 @@
 @synthesize
 	recentTracks,
 	scrobblerStatus,
-	scrobblingEnabled;
+	scrobblingEnabled,
+	preferencesController;
 
 #pragma mark Initializers
 
@@ -385,6 +386,16 @@
 
 - (void)removeObjectFromRecentTracksAtIndex:(NSUInteger)index {
 	[recentTracks removeObjectAtIndex:index];
+}
+
+#pragma mark - Misc.
+
+- (IBAction)showPreferences:(id)sender {
+	if (!preferencesController) {
+		preferencesController = [[NSWindowController alloc] initWithWindowNibName:@"Preferences"];
+	}
+	[NSApp activateIgnoringOtherApps:YES];
+	[preferencesController showWindow:self];
 }
 
 @end

@@ -31,6 +31,7 @@
 		5C5F63A3145B05830004D651 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5F63A2145B05830004D651 /* Carbon.framework */; };
 		5C5F63A5145B05910004D651 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5F63A4145B05910004D651 /* Security.framework */; };
 		8345502315AB5454000B9605 /* TrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345502215AB5453000B9605 /* TrackInfo.m */; };
+		8380751815D157CD001AB55A /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8380751715D157CD001AB55A /* Preferences.xib */; };
 		83F55CF815A4F6D600D9DF41 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F55CF715A4F6D600D9DF41 /* EMKeychainItem.m */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		5C5F63A6145B05A40004D651 /* Scribbler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Scribbler.framework; path = Frameworks/Scribbler.framework; sourceTree = "<group>"; };
 		8345502115AB5453000B9605 /* TrackInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackInfo.h; sourceTree = "<group>"; };
 		8345502215AB5453000B9605 /* TrackInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackInfo.m; sourceTree = "<group>"; };
+		8380751715D157CD001AB55A /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Preferences.xib; path = Resources/Preferences.xib; sourceTree = "<group>"; };
 		83F55CF615A4F6D600D9DF41 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
 		83F55CF715A4F6D600D9DF41 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 				5C297DF1146398410050C8DE /* star.tiff */,
 				5C297DDA146375850050C8DE /* lcd.png */,
 				5C297DDB146375850050C8DE /* MainInterface.xib */,
+				8380751715D157CD001AB55A /* Preferences.xib */,
 				5C5F638B145B04E10004D651 /* Scrobbler-Info.plist */,
 				5C5F638C145B04E10004D651 /* InfoPlist.strings */,
 				5C297DEF1463982D0050C8DE /* stop.png */,
@@ -267,6 +270,7 @@
 				5C297DE1146375850050C8DE /* MainInterface.xib in Resources */,
 				5C297DF01463982D0050C8DE /* stop.png in Resources */,
 				5C297DF2146398410050C8DE /* star.tiff in Resources */,
+				8380751815D157CD001AB55A /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

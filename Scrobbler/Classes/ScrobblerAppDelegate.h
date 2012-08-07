@@ -54,7 +54,8 @@
 
 @property (assign) NSMutableArray *recentTracks;
 @property (nonatomic, retain) IBOutlet NSTextField *scrobblerStatus;
-@property (nonatomic) BOOL scrobblingEnabled;
+@property  BOOL scrobblingEnabled;
+@property (assign) NSWindowController *preferencesController;
 
 // Application delegate methods
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
@@ -88,4 +89,6 @@
 
 //Menu Commands
 - (IBAction)togglescrobbling:(id)sender;
+- (IBAction)showPreferences:(id)sender;
+
 @end
