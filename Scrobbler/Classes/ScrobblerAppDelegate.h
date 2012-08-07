@@ -53,12 +53,14 @@
 
 @property (assign) NSMutableArray *recentTracks;
 @property (nonatomic, retain) IBOutlet NSTextField *scrobblerStatus;
-@property  BOOL scrobblingEnabled;
+@property BOOL scrobblingEnabled;
+@property BOOL systemStatusItemVisible;
 @property (assign) NSWindowController *preferencesController;
 
 // Application delegate methods
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
 - (BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication;
+- (void)showSystemStatusItem;
 
 // Connection methods
 - (IBAction)connectWithLastFM:(id)sender;
@@ -87,5 +89,6 @@
 - (IBAction)banTrack:(id)sender;
 
 - (IBAction)showPreferences:(id)sender;
+- (IBAction)toggleSystemStatusItem:(id)sender;
 
 @end

@@ -43,6 +43,7 @@
 	recentTracks,
 	scrobblerStatus,
 	scrobblingEnabled,
+	systemStatusItemVisible,
 	preferencesController;
 
 #pragma mark Initializers
@@ -51,6 +52,7 @@
 	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
 							  [NSNumber numberWithBool:NO], @"LastFMConfigured",
 							  [NSNumber numberWithBool:NO], @"LastFMEnabled",
+							  [NSNumber numberWithBool:YES], @"systemStatusItemVisible",
 							  nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
@@ -58,6 +60,7 @@
 - (id)init {
 	if (self = [super init]) {
 		scrobblingEnabled = [[[NSUserDefaults standardUserDefaults] valueForKey:@"scrobblingEnabled"] boolValue];
+		systemStatusItemVisible = [[[NSUserDefaults standardUserDefaults] valueForKey:@"systemStatusItemVisible"] boolValue];
 		recentTracks = [[NSMutableArray alloc] init];
 	}
 	return self;
@@ -67,6 +70,7 @@
 - (void)dealloc
 {
 	[recentTracks release];
+	[statusItem release];
 	[super dealloc];
 }
 
@@ -103,27 +107,24 @@
 	// register for our iTunes notifications
 	[[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(playerInfoChanged:) name:@"com.apple.iTunes.playerInfo" object:nil];
     
-    //Create the NSStatusBar and set its length
+	if (systemStatusItemVisible) {
+		[self showSystemStatusItem];
+	}
+}
+
+- (void)showSystemStatusItem {
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength] retain];
-    
-    //Used to detect where our files are
     NSBundle *bundle = [NSBundle mainBundle];
-    
-    //Allocates and loads the images into the application which will be used for our NSStatusItem
+
     statusImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"love" ofType:@"png"]];
     statusHighlightImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"love" ofType:@"png"]];
-    
-    //Sets the images in our NSStatusItem
     [statusItem setImage:statusImage];
     [statusItem setAlternateImage:statusHighlightImage];
-    
-    //Tells the NSStatusItem what menu to load
     [statusItem setMenu:statusMenu];
-    //Sets the tooptip for our item
     [statusItem setToolTip:@"Scrobbler"];
-    //Enables highlighting
     [statusItem setHighlightMode:YES];
 }
+
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
 {
 	// If we have a pending authorization, this is our
@@ -377,6 +378,19 @@
 	}
 	[NSApp activateIgnoringOtherApps:YES];
 	[preferencesController showWindow:self];
+}
+
+- (IBAction)toggleSystemStatusItem:(id)sender {
+	systemStatusItemVisible = [[[NSUserDefaults standardUserDefaults] valueForKey:@"systemStatusItemVisible"] boolValue];
+
+	if (!systemStatusItemVisible) {
+		NSStatusBar *systemStatusBar = [NSStatusBar systemStatusBar];
+		[systemStatusBar removeStatusItem:statusItem];
+		[statusItem release];
+		statusItem = nil;
+	} else {
+		[self showSystemStatusItem];
+	}
 }
 
 @end
