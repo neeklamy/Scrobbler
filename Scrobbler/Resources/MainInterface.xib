@@ -564,14 +564,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">ToggleScrobbling</string>
-						<reference key="source" ref="721588658"/>
-						<reference key="destination" ref="954070352"/>
-					</object>
-					<int key="connectionID">941</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">mainWindow</string>
 						<reference key="source" ref="306478603"/>
 						<reference key="destination" ref="513744381"/>
@@ -1069,6 +1061,7 @@
 						<string key="disconnectFromLastFM:">id</string>
 						<string key="loveTrack:">id</string>
 						<string key="showPreferences:">id</string>
+						<string key="toggleSystemStatusItem:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="banTrack:">
@@ -1091,9 +1084,12 @@
 							<string key="name">showPreferences:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="toggleSystemStatusItem:">
+							<string key="name">toggleSystemStatusItem:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="ToggleScrobbling">NSMenuItem</string>
 						<string key="mainWindow">NSWindow</string>
 						<string key="scrobblerStatus">NSTextField</string>
 						<string key="statusMenu">NSMenu</string>
@@ -1101,10 +1097,6 @@
 						<string key="ui">SYUIController</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="ToggleScrobbling">
-							<string key="name">ToggleScrobbling</string>
-							<string key="candidateClassName">NSMenuItem</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="mainWindow">
 							<string key="name">mainWindow</string>
 							<string key="candidateClassName">NSWindow</string>
