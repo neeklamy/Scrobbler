@@ -123,8 +123,6 @@
     [statusItem setToolTip:@"Scrobbler"];
     //Enables highlighting
     [statusItem setHighlightMode:YES];
-
-	[ToggleScrobbling setState:scrobblingEnabled];
 }
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
 {
@@ -359,23 +357,6 @@
 {
 	if (currentTrack)
 		[currentTrack ban];
-}
-
-- (IBAction)togglescrobbling:(id)sender {
-
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	BOOL isEnabled = [[defaults valueForKey:@"scrobblingEnabled"] boolValue];
-
-	if (isEnabled == YES) {
-		[scrobblerStatus setStringValue:@"Scrobbling is disabled."];
-		scrobblingEnabled = NO;
-	} else {
-		[scrobblerStatus setStringValue:@"Scrobbling is enabled."];
-		scrobblingEnabled = YES;
-	}
-
-	[ToggleScrobbling setState:scrobblingEnabled];
-	[defaults setValue:[NSNumber numberWithBool:scrobblingEnabled] forKey:@"scrobblingEnabled"];
 }
 
 #pragma mark - KVO

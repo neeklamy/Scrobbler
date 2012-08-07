@@ -49,7 +49,6 @@
 	NSUInteger currentTrackID;
 	
 	BOOL authorizationPending;
-    IBOutlet NSMenuItem *ToggleScrobbling;
 }
 
 @property (assign) NSMutableArray *recentTracks;
@@ -87,8 +86,6 @@
 - (IBAction)loveTrack:(id)sender;
 - (IBAction)banTrack:(id)sender;
 
-//Menu Commands
-- (IBAction)togglescrobbling:(id)sender;
 - (IBAction)showPreferences:(id)sender;
 
 @end
