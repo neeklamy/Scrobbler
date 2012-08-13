@@ -292,7 +292,8 @@
 	NSString *playerState =	[info objectForKey:@"Player State"];
 
 	/// Is track a podcast? We can't rely on looking at the genre tag because it isn't always correctly set
-	NSPredicate *podcastPredicate = [NSPredicate predicateWithFormat:@"SELF BEGINSWITH %@", @"itms://itunes.com/link?podcast"];
+	/// URLs can be of the form itms://itunes.com/link?podcast* or itms://itunes.com/podcast*
+	NSPredicate *podcastPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"^itms://itunes.com/(?:link\\?)?podcast.*"];
 	NSString *storeURL = [info valueForKey:@"Store URL"];
 	BOOL isPodcast = [podcastPredicate evaluateWithObject:storeURL];
 	BOOL scrobbleTrack = NO;
